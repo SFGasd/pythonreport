@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+台北捷運介紹
+{% endblock %}
+{% block titlemessage %}
+{% endblock %}
+{% block content %}
+    <br><br><br>
+    
+    <center>
+        <h5>台北捷運_{{ display_class }}各月里程統計圖</h5>
+        <select onChange="location=this.options[this.selectedIndex].value">
+            <option value="#">請選擇</option>
+            <optgroup label="年分">
+                {% for keys, values in station_year.items %}
+                    <option value="/taipeistationmileage/{{ keys }}/">
+                        {{ values }}
+                    </option>
+                {% endfor %}
+            </optgroup>
+        </select>
+        <table width=1200>
+            <tr><td>
+                <canvas id="myChart" width="800" height="400"></canvas>
+            </td></tr>
+        </table>
+    </center>
+
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [{% for item in station_yeardate %}'{{ item }}',{% endfor %}],
+            datasets: [{
+                label: '里程數(公里)',
+                data: [{% for item in station_mileage %}{{ item }},{% endfor %}],
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+{% endblock %}

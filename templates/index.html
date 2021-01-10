@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}
+捷運介紹網
+{% endblock %}
+{% block titlemessage %}
+{% endblock %}
+{% block content %}
+{% load static %}
+<section>
+    <div id="carousel-controller" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="w-100" height="500" src="{% static "999.png" %}" alt="">
+          <div class="carousel-caption">
+          <div class="p-3 mb-2 bg-dark text-white"><h1>高雄捷運歡迎您，祝您有美好的一天</h1></div>
+          </div>
+        </div>
+        <!-- 圖片2 -->
+        <div class="carousel-item">
+          <img class="w-100" height="500"src="{% static "123.jpg" %}" alt="">
+          <div class="carousel-caption">
+          <div class="p-3 mb-2 bg-dark text-white"><h1>台北捷運歡迎您，忙碌的一天辛苦您了</h1></div>
+          </div>
+        </div>
+        <!-- 圖片3 -->
+        <div class="carousel-item">
+          <img class="w-100" height="500"src="{% static "998.png" %}" alt="">
+          <div class="carousel-caption">
+          <div class="p-3 mb-2 bg-dark text-white"><h1>新北捷運歡迎您，您的交通安全由我來掌握</h1></div>
+          </div>
+        </div>
+
+        </div>
+        <a href="#carousel-controller" data-slide="prev" class="carousel-control-prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#carousel-controller" data-slide="next" class="carousel-control-next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-controller" data-slide-to="0" class= "active"></li>
+            <li data-target="#carousel-controller" data-slide-to="1"</li>
+            <li data-target="#carousel-controller" data-slide-to="2"</li>
+        </ol>
+    </div>
+  </section>
+    <section>
+    <div class="p-3 mb-2 bg-success text-white"><h1>捷運，全名為大眾捷運系統，該詞源於臺灣對於英語「Mass Rapid Transit」（簡稱MRT）
+            在多數場合可同義於地鐵，為鐵路運輸及城市軌道交通的一種形式，尤其是後者；而隨著各城市的
+            發展與需求不同，該詞也擴大使用在一些同樣具有高密度運輸特性、但並非運行於軌道上的交通工具
+            ，例如「公車捷運系統」。</h1></div>
+        
+    </section>
+    <div class=" px-4">
+  <div class="row gx-5">
+    <div class="col">
+          <img class="rounded float-end""w-100" height="500" src="{% static "111.jpg" %}" alt="">
+    </div>
+    <div class="col">
+      <div class="p-3 mb-2 bg-secondary text-white"><h2>主要使用「捷運」之名的是服務臺灣各都會區的城市軌道交通系統。
+      （Mass Transit Railway，直譯「集體運輸鐵路」）做為英文名稱。在香港及中國大陸，部分軌道交通系統亦採
+      用捷運一詞，指代膠輪路軌系統或機場內部的旅客捷運系統（上海地鐵浦江線、浦東機場捷運、香港國際機場旅客
+      捷運系統）。在新加坡，「捷運」並應用在新捷運 (SBS Transit) 與聖淘沙捷運單軌系統 (Sentosa Express) 
+      的名稱。</h2></div>
+    </div>
+  </div>
+</div>
+    <div class=" px-4">
+  <div class="row gx-5">
+    <div class="col">
+          <div class="p-3 mb-2 bg-info text-dark"><h2>高雄都會區大眾捷運系統，簡稱高雄捷運、高捷，為臺灣第二座
+          投入營運的大眾捷運系統、首座機場聯絡軌道系統、首座輕軌運輸系統，以高雄市區為中心，並向高雄市的郊區
+          提供服務，同時也是高雄國際機場的機場聯絡軌道系統，而計劃中的延伸路線亦涵蓋屏東縣、臺南市部分地區。
+          高捷初期以地下路線為主，紅線的橋頭火車站到世運站間則是為高架段；至於紅線的南岡山站、橘線的大寮站則
+          為平面路線，和新建的環狀輕軌相似。</h2></div>
+    </div>
+    <div class="col">
+          <img class="rounded float-end""w-100" height="500" src="{% static "997.jpg" %}" alt="">
+    </div>
+  </div>
+</div>
+    <div class=" px-4">
+  <div class="row gx-5">
+    <div class="col">
+          <img class="rounded float-end""w-100" height="500" src="{% static "996.jpg" %}" alt="">
+    </div>
+    <div class="col">
+      <div class="p-3 mb-2 bg-success text-white"><h2>新北市大眾捷運系統，簡稱新北捷運，為新北市所規劃
+      的輕軌運輸系統，因此又被稱作新竹輕軌。為中華民國一座最早於1989年提出的大眾捷運系統，服務範圍廣及新北市
+      、新北縣，當時稱作「新北都會區大眾捷運系統」。後因諸多因素未興建，僅優先推動路線六家線於2011年通車啟用
+      。而捷運路網則於2001年改規劃為輕軌運輸系統，最早僅新竹市規劃路網。</h2></div>
+    </div>
+  </div>
+</div>
+    {% endblock %}

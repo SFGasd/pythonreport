@@ -1,0 +1,56 @@
+  {% load static %}
+    <nav class="navbar  fixed-top navbar-expand-lg navbar-red bg-p-3 mb-2 bg-warning text-dark"width=500>
+    <img src="{% static "120.png" %}" width=80>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/"><h2><span class="border border-dark">回首頁</span></h2> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/taipei/">
+        <h3><span class="border border-dark">台北捷運介紹</span><h3></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/taipeicar/">
+        <h3><span class="border border-dark">台北捷運車型</span><h3></a>
+      </li>
+      <h3><li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="border border-dark">台北捷運統計圖</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/taipeistationinout/0/">每年各站進出人數統計圖</a>
+          <a class="dropdown-item" href="/taipeistationmileage/0/">每年各月里程統計圖</a>
+          <a class="dropdown-item" href="/taipeistationpersontimes/0/">每年各月搭乘人數總計統計圖</a>
+          <a class="dropdown-item" href="/taipeistationincome/0/">每年各月收入統計圖</a>
+        </div>
+      </li></h3>
+      <h3><li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="border border-dark">政府機構</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://www.epa.gov.tw/">環保署</a>
+          <a class="dropdown-item" href="https://www.mohw.gov.tw/mp-1.html">衛生署</a>
+          <a class="dropdown-item" href="https://www.swd.gov.hk/tc/index/">社會福利署</a>
+          <a class="dropdown-item" href="https://www.nca.gov.tw/">役政署</a>
+          <a class="dropdown-item" href="https://www.td.gov.hk/tc/home/index.html">運輸署</a>
+          <a class="dropdown-item" href="https://www.immigration.gov.tw/">移民署</a>
+          <a class="dropdown-item" href="https://www.motc.gov.tw/ch/index.jsp">交通署</a>
+          <a class="dropdown-item" href="https://www.npa.gov.tw/NPAGip/wSite/mp?mp=1">警政署</a>
+        </div>
+      </li></h3>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/">
+        <h3><span class="border border-dark">網站後台</span><h3></a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+<br>
+<br>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+台北捷運介紹
+{% endblock %}
+{% block titlemessage %}
+{% endblock %}
+{% block content %}
+{% load static %}
+    <img class="w-100" height="600" src="{% static "995.jpg" %}" alt="">
+    <div class="p-3 mb-2 bg-dark text-white"><h1>台北捷運車型介紹</h1></div>
+<table class="table table-info">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">車型名稱</th>
+      <th scope="col">圖片</th>
+      <th scope="col">影片</th>
+      <th scope="col">建立日期</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for item in items %}
+        <tr>
+        <td>{{ item.id}}</td>
+        <td>
+            <a href="/list/{{ item.id }}/">{{ item.name }}</a>
+        </td>
+        <td>{{ item.pub_date}}</td>
+        </tr>
+        {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}
+台北捷運介紹
+{% endblock %}
+{% block titlemessage %}
+{% endblock %}
+{% block content %}
+    <br><br><br>
+    
+    <center>
+        <h5>台北捷運_{{ chart_name }}進出人數統計圖</h5>
+        <select onChange="location=this.options[this.selectedIndex].value">
+            <option value="#">請選擇</option>
+            <optgroup label="車站">
+                {% for keys, values in station_dict.items %}
+                    <option value="/taipeistationinout/{{ keys }}/">
+                        {{ values }}
+                    </option>
+                {% endfor %}
+            </optgroup>
+        </select>
+        <table width=1200>
+            <tr><td>
+                <canvas id="myChart" width="800" height="400"></canvas>
+            </td></tr>
+        </table>
+    </center>
+    
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            datasets: [{
+                data: [
+                {% for item in station_in %}
+                    '{{ item.io_amount }}',
+                {% endfor %}
+                ],
+                label: '進站人數',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+                minBarLength: '100px',
+
+                // This binds the datasetef to the lt y axis
+
+            }, {
+                data: [
+                {% for item in station_out %}
+                    '{{ item.io_amount }}',
+                {% endfor %}
+                ],
+                label: '出站人數',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+                minBarLength: 100,
+                
+
+                // This binds the dataset to the right y axis
+            }],
+            labels: [
+            {% for item in station_year %}
+                '{{ item }}',
+            {% endfor %}
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    id: 'left-y-axis',
+                    position: 'left',
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+{% endblock %}
